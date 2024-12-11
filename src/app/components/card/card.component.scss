@@ -1,0 +1,75 @@
+@use "../../../styles" as *;
+
+.card {
+  min-width: 260px;
+  border-radius: 1rem;
+  border: 2px solid $border-color-1;
+  padding: 1.5rem;
+  font-family: "Manrope", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &-title {
+    font-size: 2em;
+    margin: 6px;
+    color: $text-color-4;
+    text-overflow: ellipsis;
+    max-width: 248px;
+    overflow: hidden;
+  }
+  &-info {
+    font-size: 1rem;
+    color: $text-color-1;
+  }
+  &-image {
+    width: 104px;
+    height: 104px;
+  }
+  &-forecast {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 0;
+    transition: 0.3s;
+    &-open {
+      height: 200px;
+    }
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.1rem;
+      margin: 0;
+      padding-bottom: 10px;
+      &-important {
+        font-weight: 500;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      &-wrapper {
+        display: flex;
+        gap: 10px;
+      }
+    }
+    &-button {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid $border-color-1;
+      background-color: $border-color-4;
+      color: #fff;
+      border-radius: 12px;
+      padding: 4px 2px;
+      transition: 0.3s;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+  }
+  &-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}

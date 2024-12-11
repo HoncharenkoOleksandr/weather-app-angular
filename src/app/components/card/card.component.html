@@ -1,0 +1,28 @@
+<div class="card">
+  <img
+    class="card-image"
+    src="{{ city!.weather[0].main.toLocaleLowerCase() }}.png"
+    alt="weather icon"
+    width="104"
+    height="104"
+  />
+  <h3 class="card-title">{{ city?.name }}</h3>
+  <p class="card-info">Temperature: {{ city?.main?.temp }} °C</p>
+  <p class="card-info">Condition: {{ city!.weather[0].description }}</p>
+  <button class="card-forecast-button" (click)="toggleForecast()">
+    {{ forecastVisible ? "Hide" : "Show" }} Forecast
+  </button>
+  @if (forecast) {
+    <div class="card-forecast  {{forecastVisible && 'card-forecast-open'}}">
+        <h4>Forecast</h4>
+        @for (item of forecast.list; track item.dt) {
+          <p class="card-forecast-info"><span class="card-forecast-info-important">{{ formatDate(item.dt_txt) }}</span>: {{ item.main.temp }} °C</p>
+          <div class="card-forecast-info-wrapper">
+            <img width="24" height="24" src="{{ item!.weather[0].main.toLocaleLowerCase() }}.png" alt=""><p class="card-forecast-info card-forecast-info-important">{{ item.weather[0].description }}</p>
+          </div>
+          <br/>
+        }
+    </div>
+  }
+  <img class="card-close" src="close.png" alt="close" (click)="remove.emit()"/>
+</div>

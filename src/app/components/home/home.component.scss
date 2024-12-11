@@ -1,0 +1,98 @@
+@use "../../../styles" as *;
+
+.main {
+  font-family: "Manrope", sans-serif;
+  &-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-error {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(40px, 40px);
+  }
+  &-search {
+    background: linear-gradient(90deg, $gradient-2 25%, $gradient-1 80%);
+    min-height: 208px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-title {
+      margin: 6px;
+    }
+    &-wrapper {
+      max-width: 800px;
+      width: 100%;
+      font-optical-sizing: auto;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      & > h1 {
+        margin: 0;
+      }
+    }
+    &-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &-input {
+      display: block;
+      max-width: calc(80% - 24px);
+      width: -webkit-fill-available;
+      height: 16px;
+      padding: 12px 16px 12px 30px;
+      border-radius: 2px;
+      border: 1px solid $border-color-2;
+      color: $text-color-2;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      margin-right: 12px;
+      border-radius: 12px;
+      &-wrapper {
+        position: relative;
+        display: flex;
+      }
+    }
+    &-button {
+      width: 20%;
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid $border-color-1;
+      background-color: $border-color-4;
+      color: #fff;
+      border-radius: 12px;
+    }
+  }
+  &-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    gap: 16px;
+    padding: 0;
+    margin: 20px 0;
+    &-warpper {
+      position: relative;
+      max-width: 1640px;
+      width: 80vw;
+      margin: auto;
+    }
+  }
+}

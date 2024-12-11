@@ -1,0 +1,48 @@
+<div class="main">
+  <div class="main-search">
+    <div class="main-search-wrapper">
+      <h1 class="main-search-title">Weather Dashboard</h1>
+      <form
+        class="main-search-input-wrapper"
+        (submit)="submitCity(cityName.value, $event); cityName.value = ''"
+      >
+        <input
+          class="main-search-input"
+          type="text"
+          placeholder="Enter city name"
+          #cityName
+          required
+        />
+        <button class="main-search-button" type="submit">Add City</button>
+      </form>
+    </div>
+  </div>
+  <div>
+    @if (loading) {
+      <div class="main-loading">
+        <img src="load-time.gif" alt="Loading..." width="104" height="104" />
+      </div>
+    }
+    @if (error) {
+      <div class="main-error">
+        <img
+          class="main-error-image"
+          src="error-page.png"
+          width="52"
+          height="52"
+          alt="error"
+        />
+        <p class="main-error-message">{{ error }}</p>
+      </div>
+    }
+  </div>
+  <div class="main-list-warpper">
+    <ul class="main-list">
+      @for (city of cities; track city.name) {
+        <app-card [city]="city" (remove)="removeCity(city.name)"></app-card>
+      } @empty {
+        <p class="main-list-empty">Enter a city name to the text input.</p>
+      }
+    </ul>
+  </div>
+</div>
