@@ -7,17 +7,6 @@ import { trigger, style, animate, transition } from '@angular/animations';
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  animations: [
-    trigger('slideToggle', [
-      transition(':enter', [
-        style({ height: 0, opacity: 0 }),
-        animate('300ms ease-out', style({ height: '*', opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('300ms ease-in', style({ height: 0, opacity: 0 })),
-      ]),
-    ]),
-  ],
 })
 export class CityCardComponent implements OnInit {
   @Input() city: WeatherResponse | undefined;
