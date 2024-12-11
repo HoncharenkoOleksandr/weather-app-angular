@@ -2,12 +2,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
 
-## Development server
+## To start just run a Development server
 
+All links to the API and API keys are in .env | .env.dev | .env.prod files, this means you don't need to add anything manually just run the command below
 To start a local development server, run:
 
 ```bash
-ng serve
+npm run start:dev
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
